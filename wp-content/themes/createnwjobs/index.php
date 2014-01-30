@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: index Page
+*/
 get_header(); ?>
  <div id="main-content3" class="row container show-border single-temp">
         <div class="col-md-8 addpad">
@@ -13,7 +16,7 @@ get_header(); ?>
                     }
                      if ( $display -> have_posts() ) : while ( $display -> have_posts() ) : $display -> the_post(); ?>
                     <p class="plink"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-                    <p class="byline"><?php the_date(); ?></p><hr/>
+                    <p class="byline"><?php the_time('F j, Y'); ?></p><hr/>
                     <?php endwhile; else: ?>
                     <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
                     <?php endif; ?>

@@ -11,17 +11,19 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width">
-        
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <meta name="description" content="The Alliance for Northwest Jobs and Exports supports new export terminals which will create jobs and bring new tax revenue to Northwest communities." />
+	<meta name="keywords" content="coal exports, exports, northwest alliance for jobs and exports, washington state, oregon state, create jobs, new jobs, community investment, tax revenue, expanding trade, improve trade industry, coal trains, coal exports, washington coal export terminals, oregon coal export terminals, export terminals, new jobs, jobs in the northwest, investment" />
+        <title><?php is_front_page() ? bloginfo('name') : wp_title(''); ?> | <?php bloginfo('description'); ?></title>
         <link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
+        <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico" />
         <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
         <?php wp_head(); ?>
     </head>
-    <?php $p = 105; if(is_page($p)){?>
+    <?php global $p; $p = 105; if(is_page($p)){?>
         <body id="body">
          <div id="head-wrap" class="head-wrap2">
     <?php }  else { ?>
@@ -55,29 +57,72 @@
                 </nav><!--End of nav-wrap nav-->
             </div><!--End of nav-wrapper div-->
             <div id="slide-show2" class="container no-box">
-                <div class="bg">
+                <?php if(is_page($p)){?>
+                    <div>
+                <?php } else { ?>
+                    <div class="bg">
+                <?php } ?>
                     <?php 
                         global $post;
                         $id = $post->ID; 
-                        $args = array('child_of' => $id);
-                        global $children;
-                        $children = get_pages($args);
-                        if ($children || $post->post_parent){ ?>
+                        $subpages1 = array (18, 17, 223, 16, 19, 4);
+                        $subpages2 = array (13, 11);
+                        $subpages3 = array (223, 23, 22, 6);
+                        if (in_array($id, $subpages1)){ ?>
                             <div class="col-md-8"> 
-                                <img src="http://createnwjobs.wp.com/wp-content/uploads/2012/08/workers-planning-car.jpg" />
+                                 <?php echo get_the_post_thumbnail($id); ?> 
                             </div>
                             <div class="col-md-4">  
-                                <ul class="secondary-nav">
-
                                     <?php 
-                                        echo "<li class='selected'><a href='".get_page_link( $id)."'>".$post->post_title."</a></li>" ;
-                                     foreach ( $children as $page ) {        
-                                        echo  "<li><a href='".get_page_link( $page->ID )."'>".$page->post_title."</a></li>";
-                                     }
+                                      wp_nav_menu( array(
+                                                    'container'=>'',
+                                                    'theme_location' =>'primary',
+                                                    'menu' => 'sub menu 1',
+                                                    'menu_class'=>'secondary-nav',
+                                                    )); 
                                      ?>	
-                                </ul>   
                             </div>
-                        <?php } else { ?>      
+                        <?php } elseif(in_array($id, $subpages2)) { ?>      
+                        
+                            <div class="col-md-8"> 
+                                 <?php echo get_the_post_thumbnail($id); ?> 
+                            </div>
+                            <div class="col-md-4">  
+                                    <?php 
+                                      wp_nav_menu( array(
+                                                    'container'=>'',
+                                                    'theme_location' =>'primary',
+                                                    'menu' => 'sub menu 2',
+                                                    'menu_class'=>'secondary-nav',
+                                                    )); 
+                                     ?>	
+                            </div>
+                    <?php } elseif(in_array($id, $subpages3)) { ?>      
+                        
+                            <div class="col-md-8"> 
+                                 <?php echo get_the_post_thumbnail($id); ?> 
+                            </div>
+                            <div class="col-md-4">  
+                                    <?php 
+                                      wp_nav_menu( array(
+                                                    'container'=>'',
+                                                    'theme_location' =>'primary',
+                                                    'menu' => 'sub menu 3',
+                                                    'menu_class'=>'secondary-nav',
+                                                    )); 
+                                     ?>	
+                            </div>
+                             <?php } elseif($id == 105) { ?>      
+                            <div class="col-md-12">  
+                                 <div class="fb-like-box-wrapper">
+                                    <h2>Join People Like You<br />From Across The Northwest</h2>
+                                        <div class="fb-like-box-mask">
+                                           <div class="fb-like-box" data-href="https://www.facebook.com/AllianceForNorthwestJobsExports" data-width="960" height="335" data-show-faces="true" data-border-color="#ffffff" data-stream="false" data-header="false"></div>
+                                        </div>
+                                        <div class="fb-like" data-href="https://www.facebook.com/AllianceForNorthwestJobsExports" data-send="false" data-width="960" data-show-faces="false"></div>     
+                                </div>
+                            </div>
+                        <?php } else {?>
                         <div class="col-md-12"> 
                             <img src="/assets/images/slide-image.PNG" class="img-responsive" />
                         </div>

@@ -3,9 +3,11 @@
  *
  * 1.0 - Reset
  * 2.0 - Basic Structure
- * 4.0 - Header
- * 5.0 - Navigation
- * 6.0 - Content
+ * 3.0 - Header
+ * 4.0 - Navigation
+ * 5.0 - Content
+ * 6.0 - Slider
+ * 7.0 - Facebook
  * -----------------------------------------------------------------------------
  */
 
@@ -63,10 +65,15 @@ a {
 .latest-news {
    color: #525252 !important;
    font-size: 14px !important;
+   font-weight: 700 !important;
 }
 .col-md-8 h2 { 
-    color: #446F9C ;
-    font-size: 18px;
+    color: #66A2C7;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: 26px;
+    font-family: "Open Sans";
 }
 
 /**
@@ -232,56 +239,76 @@ a {
     line-height: 18px;
     margin-right: 18px;
     text-transform: uppercase;
+    
 }
 
 #nav-wrap .links li a {
     display: block;
     padding: 13px 15px;
     text-decoration: none;
+    font-weight: 500;
 }
 #nav-wrap .links li.strong a {
     font-family: "Open Sans",sans-serif;
-    font-weight: bold;
+    font-weight: 700;
 }
 #nav-wrap .links li.selected a, #nav-wrap .links li a:hover {
     background-color: #FFFFFF;
     color: #446F9C !important;
 }
 
-.current- {
+#menu-main-menu .current-m {
 		background: #FFFFFF;
-                font-weight: bold;
+                font-weight: bolder;
                 
 	}
 
-li.current-:hover {
-		background: #E53038;
+#menu-main-menu li.current-m:hover {
+		background: none;
 	}
 	
-li.current- a { 
+#menu-main-menu li.current-m a { 
 		color: #446F9C !important; 
+                 
 	}
         .selected a {
             color: #333333;
         }
+        
+#menu--1 .current-m a, #menu--2 .current-m a, #menu--3 .current-m a{
+                font-weight: bolder;
+                color:#525252 !important;
+	}      
+     
+.m-285 a, .m-497 a{
+            font-weight: 700 !important;
+        } 
 @media screen and (max-width: 768px) {
 		.active {
 				display:block;	
 			}
 }
+
+/**
+ * 5.0 Content
+ * -----------------------------------------------------------------------------
+ */
 .secondary-nav{
     list-style: none;
     padding: 10px 0 0 0;
     text-align: left;
-    font-weight: bold;
+    font-weight: 700;
     text-transform:uppercase; 
 }
 .secondary-nav li {
-    padding-top: 8px;
+    //padding-top: 8px;
+    letter-spacing: -1px;
+    line-height: 14px;
+    margin: 15px 0;
 }
 .secondary-nav li a{
     text-decoration: none;
-    font-size: 12px;
+    font-size: 14px;
 }
 #main-content1, #main-content2, #main-content3{
     overflow: hidden;
@@ -342,7 +369,7 @@ h2 {
 }
 
 .fact-number {
-    color: #446F9C;
+    color: #66A2C7;
     font-size: 42px;
     left: -2px;
     letter-spacing: -1px;
@@ -496,7 +523,7 @@ h2 {
 }
 
 /**
- * 3.0 Slider
+ * 6.0 Slider
 * ---------------------------------------------------------
  */
 .nivo-caption {
@@ -590,4 +617,67 @@ ul {
 #main-content3  li {
     margin: 10px 0;
     position: relative;
+}
+
+/**
+ * 7.0 facebook
+* ---------------------------------------------------------
+ */
+.fb-like-box-wrapper {
+    position: relative;
+}
+.fb-like-box-wrapper h2 {
+    background: none repeat scroll 0 0 rgba(67, 99, 136, 0.9);
+    color: #FFFFFF;
+    display: inline-block;
+    font-family: "OpenSansBold",sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    left: 30px;
+    letter-spacing: -1px;
+    line-height: 26px;
+    margin: 0 0 10px;
+    padding: 25px 30px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 52px;
+    z-index: 1;
+}
+.fb-like-box-wrapper .fb-like-box-mask {
+    height: 220px;
+    overflow: hidden;
+}
+.fb-like-box-wrapper .fb-like-box-mask .fb-like-box {
+    margin-top: -95px;
+}
+.fb-like-box-wrapper .fb-like {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.logos {
+    left: -10px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 980px;
+}
+ .logos li {
+    border: 1px solid #66A2C7;
+    float: left;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    width: 280px;
+}
+
+.logos span span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.logos span {
+    display: table;
+    height: 100%;
+    width: 100%;
 }

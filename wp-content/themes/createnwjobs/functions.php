@@ -95,7 +95,7 @@ add_filter('wp_page_menu', 'responsive_wp_page_menu');
 function roots_wp_nav_menu($text) {
   $replace = array(
     'sub-menu'     => '',
-	'menu-item'  => '',
+	'menu-item'  => 'm',
 	'menu-item-type-post_type'  => '',
 	'menu-item-object-page'  => '',
 	'menu-item-13'  => '',

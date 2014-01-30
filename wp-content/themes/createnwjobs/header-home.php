@@ -12,11 +12,13 @@
        
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width">
-        
-         <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <meta name="description" content="The Alliance for Northwest Jobs and Exports supports new export terminals which will create jobs and bring new tax revenue to Northwest communities." />
+	<meta name="keywords" content="coal exports, exports, northwest alliance for jobs and exports, washington state, oregon state, create jobs, new jobs, community investment, tax revenue, expanding trade, improve trade industry, coal trains, coal exports, washington coal export terminals, oregon coal export terminals, export terminals, new jobs, jobs in the northwest, investment" />
+        <title><?php is_front_page() ? bloginfo('name') : wp_title(''); ?> | <?php bloginfo('description'); ?></title>
         <link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
+        <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico" />
         <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
