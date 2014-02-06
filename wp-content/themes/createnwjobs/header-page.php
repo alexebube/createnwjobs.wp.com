@@ -34,9 +34,9 @@
            <a href="<?php bloginfo('url')?>"><h1>Alliance for Northwest Jobs & Exports</h1></a>
            <?php global $post;
                     if ( is_page() && $post->post_parent ) {?>
-           <h2 class="head-desc"><?php echo get_the_title($post->post_parent); ?></h2>
+           <h3 class="head-desc"><?php echo get_the_title($post->post_parent); ?></h3>
            <?php  } else { ?>
-                <h2 class="head-desc"><?php echo get_the_title(); ?></h2>
+                <h3 class="head-desc"><?php echo get_the_title(); ?></h3>
                  <?php } ?>
         </div>
         <div id="nav-wrapper" class="nav-wrapper">
@@ -56,7 +56,7 @@
 			</ul>
                 </nav><!--End of nav-wrap nav-->
             </div><!--End of nav-wrapper div-->
-            <div id="slide-show2" class="container no-box">
+            <div id="<?php if(($p === 105) && is_page($p)): echo "slide-show3"; else: echo "slide-show2";endif;?>" class="container no-box">
                 <?php if(is_page($p)){?>
                     <div>
                 <?php } else { ?>
@@ -124,7 +124,7 @@
                             </div>
                         <?php } else {?>
                         <div class="col-md-12"> 
-                            <img src="/assets/images/slide-image.PNG" class="img-responsive" />
+                            <img src="/wp-content/uploads/2014/02/workers-planning-car1.jpg" />
                         </div>
                         <?php } ?>      
             </div><!--End of slide-show div-->           

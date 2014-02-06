@@ -29,7 +29,7 @@
            <a href="<?php bloginfo('url')?>"><h1>Alliance for Northwest Jobs & Exports</h1></a>
            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            <?php $category = get_the_category(); ?>
-           <h2 class="head-desc"><?php echo $category[0]->cat_name;; ?></h2>
+           <h3 class="head-desc"><?php echo $category[0]->cat_name;; ?></h3>
            <?php endwhile; else: ?>
         <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
         <?php endif; ?>

@@ -3,7 +3,7 @@
 Template Name: 404 and fact
 */
 get_header(); ?>
- <div id="main-content3" class="row container show-border single-temp">
+ <div id="main-content4" class="row container show-border single-temp">
         <div class="col-md-8 addpad">
             <div class="stories">
                 <?php if (is_404()){ ?>

@@ -27,7 +27,7 @@
         <div id="head-wrap" class="head-wrap1">
         <div id="header" class="container">
           <a href="<?php bloginfo('url')?>"><h1>Alliance for Northwest Jobs & Exports</h1></a>
-          <h2 class="head-desc">
+          <h3 class="head-desc">
               <?php 
                 if (is_category()){
                     echo single_cat_title();
@@ -35,7 +35,7 @@
                     echo get_the_title();
                 }
               ?>
-          </h2> 
+          </h3> 
         </div>
         <div id="nav-wrapper" class="nav-wrapper">
                 <nav id="nav-wrap" class="nav-wrap">
